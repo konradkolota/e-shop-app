@@ -2,12 +2,7 @@ package pl.kk.eshopapp.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -30,8 +25,10 @@ public class Order {
     };
 
     @OneToOne
+    @JoinColumn(name = "adderes_do_zamowienia")
     private Address deliveryAddress;
     @OneToOne
+    @JoinColumn(name = "adres_do_zamowienia")
     private Address userAddress;
     @OneToOne
     private OrderLine orderLine;

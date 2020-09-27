@@ -1,21 +1,17 @@
 package pl.kk.eshopapp.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "opiekun")
+@Table(name = "patron")
 public class Author {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "imie_opiekuna")
+    @Column(name = "name")
     private String firstName;
-    @Column(name = "nazwisko_opiekuna")
+    @Column(name = "last_name")
     private String lastName;
 
     public Long getId() {

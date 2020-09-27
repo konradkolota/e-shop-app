@@ -1,22 +1,17 @@
 package pl.kk.eshopapp.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "klienci")
+@Table(name = "client")
 public class Client {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "imie")
+    @Column(name = "name")
     private String firstName;
-    @Column(name = "nazwisko")
+    @Column(name = "last_name")
     private String lastName;
     private Long nip;
     private String mail;

@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "podkategoria")
+@Table(name = "subcategory")
 public class Subcategory {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "nazwa_podkategorii")
+    @Column(name = "name")
     private String subcategoryName;
 
     public Long getId() {

@@ -3,21 +3,21 @@ package pl.kk.eshopapp.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "adresy")
+@Table(name = "address")
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "kraj", nullable = false)
+    @Column(name = "country", nullable = false)
     private String country;
-    @Column(name = "wojewodztwo")
+    @Column(name = "state")
     private String state;
-    @Column(name = "miasto")
+    @Column(name = "city")
     private String city;
-    @Column(name = "ulica")
+    @Column(name = "street")
     private String street;
-    @Column(name = "kod_pocztowy")
+    @Column(name = "zip_code")
     private String zipCode;
 
     public Long getId() {

@@ -11,16 +11,16 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "kategorie")
+@Table(name = "catogory")
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "nazwa_kategorii")
+    @Column(name = "name")
     private String name;
     @OneToMany
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "subcategory_id")
     private List<Subcategory> subcategory;
 
     public Long getId() {

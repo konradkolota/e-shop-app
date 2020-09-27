@@ -1,28 +1,22 @@
 package pl.kk.eshopapp.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "konta_uzytkownikow")
+@Table(name = "account")
 public class UserAccount {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "haslo", nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "login", nullable = false)
     private String login;
-    @Column(name = "url_ikony")
+    @Column(name = "icon_url")
     private String imageUrl;
-    @Column(name = "kanal_komunikacji")
+    @Column(name = "communication")
     private String communicationPrefs;
 
     @OneToMany

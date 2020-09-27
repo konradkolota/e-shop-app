@@ -1,13 +1,6 @@
 package pl.kk.eshopapp.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -16,15 +9,15 @@ import java.util.List;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "tytul")
+    @Column(name = "title")
     private String title;
-    @Column(name = "opis_produktu")
+    @Column(name = "description")
     private String description;
-    @Column(name = "cena_produktu", precision = 10, scale = 2)
+    @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
-    @Column(name = "typ_produktu")
+    @Column(name = "type")
     private String productType;
 
     @OneToMany

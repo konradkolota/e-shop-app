@@ -8,16 +8,16 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "zamowienia")
+@Table(name = "order")
 public class Order {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "koszt", precision = 10, scale = 2)
+    @Column(name = "cost", precision = 10, scale = 2)
     private BigDecimal cost;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    @Column(name = "data_zlozenia_zamowienia")
+    @Column(name = "date")
     private Date orderDate;
     private enum status{
         COMPLETED, SHIPPED , IN_PROGRESS, CANCELED, ACCEPTED;
@@ -25,10 +25,10 @@ public class Order {
     };
 
     @OneToOne
-    @JoinColumn(name = "adderes_do_zamowienia")
+    @JoinColumn(name = "order_address")
     private Address deliveryAddress;
     @OneToOne
-    @JoinColumn(name = "adres_do_zamowienia")
+    @JoinColumn(name = "user_address")
     private Address userAddress;
     @OneToOne
     private OrderLine orderLine;
